@@ -2,19 +2,31 @@
   "name": "element-is-ready",
   "version": "1.0.0",
   "description": "Do something when an element of a given selector is created and added to the DOM.",
+  "license": "MIT",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prashantpalikhe/elementIsReady.git"
   },
-  "keywords": [],
-  "author": "Prashant <prashpal09@gmail.com>",
-  "license": "ISC",
+  "author": {
+    "name": "Prashant Palikhe",
+    "email": "prashpal09@gmail.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "browser",
+    "mutationobserver",
+    "element",
+    "ready",
+    "promise",
+    "detect",
+    "check"
+  ],
   "bugs": {
     "url": "https://github.com/prashantpalikhe/elementIsReady/issues"
   },

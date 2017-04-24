@@ -7,13 +7,13 @@
  */
 function elementIsReady(selector) {
     return new Promise((resolve) => {
-         const element = document.querySelector(selector);
+        const element = document.querySelector(selector);
 
-         if (element !== null) {
-             return resolve(element);
-         }
+        if (element !== null) {
+            return resolve(element);
+        }
 
-         if ('MutationObserver' in window) {
+        if ('MutationObserver' in window) {
             const observer = new MutationObserver(mutation => {
                 const nodes = [...mutation.addedNodes];
 
@@ -31,18 +31,18 @@ function elementIsReady(selector) {
                 subtree: true
             });
 
-         } else {
+        } else {
             const waitInterval = setInterval(() => {
                 const element = document.querySelector(selector);
 
                 if (element) {
                     clearInterval(waitInterval);
-                    
+
                     return resolve(element);
                 }
             }, 50);
-         }
+        }
     });
 }
 
-export default elementIsReady;
+module.exports = elementIsReady;

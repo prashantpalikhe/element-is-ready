@@ -8,8 +8,14 @@ $ npm install --save element-is-ready
 
 ## Usage
 
-```
+```JavaScript
 const elementIsReady = require('element-is-ready');
+
+elementIsReady('#myElement').then((element) => {
+    // .. do something with element 
+});
 ```
+
+
 
 
