@@ -14,16 +14,18 @@ function elementIsReady(selector) {
         }
 
         if ('MutationObserver' in window) {
-            const observer = new MutationObserver(mutation => {
-                const nodes = [...mutation.addedNodes];
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    const nodes = [...mutation.addedNodes];
 
-                for (let node of nodes) {
-                    if (node.matches && node.matches(selector)) {
-                        observer.disconnect();
+                    for (let node of nodes) {
+                        if (node.matches && node.matches(selector)) {
+                            observer.disconnect();
 
-                        return resolve(node);
+                            return resolve(node);
+                        }
                     }
-                }
+                });
             });
 
             observer.observe(document.documentElement, {
